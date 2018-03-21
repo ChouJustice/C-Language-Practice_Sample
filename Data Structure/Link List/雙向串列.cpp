@@ -9,7 +9,7 @@ void reviseNode(int,int);
 void resetNode();
 bool searchNode(int);
 
-struct Node
+struct Node  //ç¯€é»è³‡æ–™
 {
 	int data;
 	struct Node*rlink;
@@ -31,31 +31,31 @@ int main(void)
 	
 	while(choice != 6)
 	{
-		printf("[1]·s¼W [2]§R°£ [3]´¡¤J [4]­×§ï [5]­«¸m [6]Â÷¶} ==> "); 
+		printf("[1]æ–°å¢ [2]åˆªé™¤ [3]æ’å…¥ [4]ä¿®æ”¹ [5]é‡ç½® [6]é›¢é–‹ ==> "); 
         scanf("%d",&choice);
 		switch(choice)
 		{
 			case 1 :
-				printf("\n½Ğ¿é¤J­n¥[¤Jªº¼Æ¦r ==> ");
+				printf("\nè«‹è¼¸å…¥è¦åŠ å…¥çš„æ•¸å­— ==> ");
 				scanf("%d",&temp);
 				insertNode(temp);
 				break;
 			case 2 :
-				printf("\n½Ğ¿é¤J­n§R°£ªº¼Æ¦r ==> ");
+				printf("\nè«‹è¼¸å…¥è¦åˆªé™¤çš„æ•¸å­— ==> ");
 				scanf("%d",&temp);
 				deleteNode(temp);
 				break;
 			case 3 :
-	            printf("\n½Ğ°İ·Q¿é¤J¦b­ş¤@­Ó¼Æ¦r¤§«á ==> ");
+	            printf("\nè«‹å•æƒ³è¼¸å…¥åœ¨å“ªä¸€å€‹æ•¸å­—ä¹‹å¾Œ ==> ");
 	            scanf("%d",&tempnum);
-				printf("½Ğ¿é¤J­n´¡¤Jªº¼Æ¦r ==> ");
+				printf("è«‹è¼¸å…¥è¦æ’å…¥çš„æ•¸å­— ==> ");
 	            scanf("%d",&temp);
 				insertNode_frommiddle(tempnum,temp);
 				break;
 			case 4 :
-				printf("\n½Ğ¿é¤J­n­×§ïªº¼Æ¦r ==> ");
+				printf("\nè«‹è¼¸å…¥è¦ä¿®æ”¹çš„æ•¸å­— ==> ");
 				scanf("%d",&tempnum);
-				printf("½Ğ¿é¤J­×§ï«áªº¼Æ¦r ==> ");
+				printf("è«‹è¼¸å…¥ä¿®æ”¹å¾Œçš„æ•¸å­— ==> ");
 				scanf("%d",&temp);
 				reviseNode(tempnum,temp);
 				break;
@@ -70,7 +70,7 @@ int main(void)
 	return 0;
 }
 
-void insertNode(int temp)
+void insertNode(int temp) //æ–°å¢ç¯€é»
 {
 	now = head;
 	ptr newnode;
@@ -100,7 +100,7 @@ void insertNode(int temp)
 	}
 	
 	now=head;
-	printf("¦V¥k¦L¥X ");
+	printf("å‘å³å°å‡º ");
 	while(now->rlink!=head)
 	{
 	    now=now->rlink;
@@ -108,7 +108,7 @@ void insertNode(int temp)
 	}
 	printf("\n");
 	now=head;
-	printf("¦V¥ª¦L¥X ");
+	printf("å‘å·¦å°å‡º ");
 	while(now->llink!=head)
 	{
 	  	now=now->llink;
@@ -118,12 +118,12 @@ void insertNode(int temp)
 	printf("\n\n");
 }
 
-void deleteNode(int temp)
+void deleteNode(int temp) //åˆªé™¤ç¯€é»
 {
 	now = head;
 	if(node_number==0)
 	{
-		printf("¾Ş§@¥¢±Ñ!(µL¼Æ¦r¥i§R)\n");
+		printf("æ“ä½œå¤±æ•—!(ç„¡æ•¸å­—å¯åˆª)\n");
 	}
 	else
 	{
@@ -135,12 +135,12 @@ void deleteNode(int temp)
 		}
 		else
 		{
-			printf("¾Ş§@¥¢±Ñ!(µL¦¹¼Æ¦r)\n");
+			printf("æ“ä½œå¤±æ•—!(ç„¡æ­¤æ•¸å­—)\n");
 		}
 	}
 	
 	now=head;
-	printf("¦V¥k¦L¥X ");
+	printf("å‘å³å°å‡º ");
 	while(now->rlink!=head)
 	{
 	    now=now->rlink;
@@ -148,7 +148,7 @@ void deleteNode(int temp)
 	}
 	printf("\n");
 	now=head;
-	printf("¦V¥ª¦L¥X ");
+	printf("å‘å·¦å°å‡º ");
 	while(now->llink!=head)
 	{
 	  	now=now->llink;
@@ -158,7 +158,7 @@ void deleteNode(int temp)
 	printf("\n\n");
 }
 
-bool searchNode(int temp)
+bool searchNode(int temp) //æœå°‹ç¯€é»
 {
 	now = head;
     for(int i=0;i<node_number;i++)
@@ -190,12 +190,12 @@ void insertNode_frommiddle(int tempnum,int temp)
 		}
 		else
 		{
-			printf("¾Ş§@¿ù»~!(µL¦¹ %d ¼Æ¦r)\n",tempnum);
+			printf("æ“ä½œéŒ¯èª¤!(ç„¡æ­¤ %d æ•¸å­—)\n",tempnum);
 		}
 	}
 	
 	now=head;
-	printf("¦V¥k¦L¥X ");
+	printf("å‘å³å°å‡º ");
 	while(now->rlink!=head)
 	{
 	    now=now->rlink;
@@ -203,7 +203,7 @@ void insertNode_frommiddle(int tempnum,int temp)
 	}
 	printf("\n");
 	now=head;
-	printf("¦V¥ª¦L¥X ");
+	printf("å‘å·¦å°å‡º ");
 	while(now->llink!=head)
 	{
 	  	now=now->llink;
@@ -218,7 +218,7 @@ void reviseNode(int tempnum , int temp)
 	now = head;
 	if(node_number==0)
 	{
-		printf("¾Ş§@¥¢±Ñ!(µL¼Æ¦r¥i­×§ï)\n");
+		printf("æ“ä½œå¤±æ•—!(ç„¡æ•¸å­—å¯ä¿®æ”¹)\n");
 	}
 	else
 	{
@@ -228,12 +228,12 @@ void reviseNode(int tempnum , int temp)
 		}
 		else
 		{
-			printf("¾Ş§@¥¢±Ñ!(µL¦¹¼Æ¦r)\n");
+			printf("æ“ä½œå¤±æ•—!(ç„¡æ­¤æ•¸å­—)\n");
 		}
 	}
 	
 	now=head;
-	printf("¦V¥k¦L¥X ");
+	printf("å‘å³å°å‡º ");
 	while(now->rlink!=head)
 	{
 	    now=now->rlink;
@@ -241,7 +241,7 @@ void reviseNode(int tempnum , int temp)
 	}
 	printf("\n");
 	now=head;
-	printf("¦V¥ª¦L¥X ");
+	printf("å‘å·¦å°å‡º ");
 	while(now->llink!=head)
 	{
 	  	now=now->llink;
