@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int File_open_fp1(int ,char); //¶}ÀÉÅªÀÉ-----¦h¶µ¦¡¤@
-int File_open_fp2(int ,char ); //¶}ÀÉÅªÀÉ-----¦h¶µ¦¡¤G
-void Into_array(int ,int ); //±N­È¦s¤J°}¦C 
-int Add(int , int);  //¦h¶µ¬O¬Û¥[ 
-void Print();  //Printf³Ì«áµ²ªG  ·s«Øc_poly.txt¨Ã±N³Ì«áµ²ªG¦s¤J
+int File_open_fp1(int ,char); //é–‹æª”è®€æª”-----å¤šé …å¼ä¸€
+int File_open_fp2(int ,char ); //é–‹æª”è®€æª”-----å¤šé …å¼äºŒ
+void Into_array(int ,int ); //å°‡å€¼å­˜å…¥é™£åˆ— 
+int Add(int , int);  //å¤šé …æ˜¯ç›¸åŠ  
+void Print();  //Printfæœ€å¾Œçµæœ  æ–°å»ºc_poly.txtä¸¦å°‡æœ€å¾Œçµæœå­˜å…¥
 
-int length_a = 0; //c_poly³Ì¦h¥i¥H¨ì¦h¤Ö 
-int length_b = 0; //b_poly³Ì¦h¥i¥H¨ì¦h¤Ö 
-int length_c = 0;  //c_poly³Ì¦h¥i¥H¨ì¦h¤Ö 
+int length_a = 0; //c_polyæœ€å¤šå¯ä»¥åˆ°å¤šå°‘ 
+int length_b = 0; //b_polyæœ€å¤šå¯ä»¥åˆ°å¤šå°‘ 
+int length_c = 0;  //c_polyæœ€å¤šå¯ä»¥åˆ°å¤šå°‘ 
 int Equation1[2][40]={0};
 int Equation2[2][40]={0};
 int Equation3[2][40]={0};
@@ -33,18 +33,18 @@ int File_open_fp1(int x , char filename1)
    FILE *fp1;
    char ch;
    
-   printf("½Ğ¿é¤JÀÉ¦W: ");
+   printf("è«‹è¼¸å…¥æª”å: ");
    scanf("%s",filename_1);
    
    
    if((fp1 = fopen(filename_1,"r")) == NULL)
    {
-      printf("¶}ÀÉ¥¢±Ñ....\n");
+      printf("é–‹æª”å¤±æ•—....\n");
       system("pause");
       exit(0);
    }
     
-   while(1)   //­pºâÀÉ®×¤@¤¤ ¦@¦³´X­Ó¼Æ¦r  ¬°¤F­­¨î°}¦C¤j¤p   
+   while(1)   //è¨ˆç®—æª”æ¡ˆä¸€ä¸­ å…±æœ‰å¹¾å€‹æ•¸å­—  ç‚ºäº†é™åˆ¶é™£åˆ—å¤§å°   
    {
       ch = getc(fp1);
       if(ch == EOF) break;
@@ -53,7 +53,7 @@ int File_open_fp1(int x , char filename1)
          x = x + 1;
       }
    }
-   printf("\n ¦@¦³ %d ­Ó¼Æ¦r\n\n",x+1);
+   printf("\n å…±æœ‰ %d å€‹æ•¸å­—\n\n",x+1);
    x = x+1;
    return x;
 }
@@ -63,17 +63,17 @@ int File_open_fp2(int y , char filename2)
    FILE *fp2;
    char ch;
    
-   printf("½Ğ¿é¤JÀÉ¦W: ");
+   printf("è«‹è¼¸å…¥æª”å: ");
    scanf("%s",filename_2);
    
    if((fp2 = fopen(filename_2,"r")) == NULL)
    {
-      printf("¶}ÀÉ¥¢±Ñ....\n");
+      printf("é–‹æª”å¤±æ•—....\n");
       system("pause");
       exit(0);
    }
     
-   while(1)   //­pºâÀÉ®×¤@¤¤ ¦@¦³´X­Ó¼Æ¦r  ¬°¤F­­¨î°}¦C¤j¤p
+   while(1)   //è¨ˆç®—æª”æ¡ˆä¸€ä¸­ å…±æœ‰å¹¾å€‹æ•¸å­—  ç‚ºäº†é™åˆ¶é™£åˆ—å¤§å°
    {
       ch = getc(fp2);
       if(ch == EOF) break;
@@ -82,7 +82,7 @@ int File_open_fp2(int y , char filename2)
          y = y + 1;
       }
    }
-   printf("\n ¦@¦³ %d ­Ó¼Æ¦r\n\n",y+1);
+   printf("\n å…±æœ‰ %d å€‹æ•¸å­—\n\n",y+1);
    y = y+1;
    return y;
 }
@@ -92,7 +92,7 @@ void Into_array(int j , int k)
    FILE *fp1;
    FILE *fp2;
    int i=0,num=0,temp=0;  
-   int a=0,b=0;  //a¬°«Y¼Æ¼È¦s  b¬°«ü¼Æ¼È¦s 
+   int a=0,b=0;  //aç‚ºä¿‚æ•¸æš«å­˜  bç‚ºæŒ‡æ•¸æš«å­˜ 
    fp1 = fopen(filename_1,"r");
    fp2 = fopen(filename_2,"r");
    
@@ -143,8 +143,8 @@ void Into_array(int j , int k)
    fclose(fp1);  
    fclose(fp2); 
    
-   /* ¦C¥X²Ä¤@­Ó¡B²Ä¤G­Ó°}¦C */ 
-   printf("a °}¦C\n");
+   /* åˆ—å‡ºç¬¬ä¸€å€‹ã€ç¬¬äºŒå€‹é™£åˆ— */ 
+   printf("a é™£åˆ—\n");
    int g , h;
    for(g=0;g<2;g++)
    {
@@ -156,7 +156,7 @@ void Into_array(int j , int k)
    }
    printf("\n\n");
    
-   printf("b °}¦C\n");
+   printf("b é™£åˆ—\n");
    for(g=0;g<2;g++)
    {
       for(h=0;h<k/2;h++)
@@ -183,7 +183,7 @@ int Add(int j ,int k)
        i++;
        j++;
        z++;
-       if(Equation3[0][k] != 0)  //¦pªG¬Û¥[«á©è¾P «h¤£¦L¥X 
+       if(Equation3[0][k] != 0)  //å¦‚æœç›¸åŠ å¾ŒæŠµéŠ· å‰‡ä¸å°å‡º 
        {
          k++;
        }
@@ -210,9 +210,9 @@ int Add(int j ,int k)
    }
    
    printf("\n\n");
-   /* ¦C¥X²Ä¤T­Ó°}¦C */ 
+   /* åˆ—å‡ºç¬¬ä¸‰å€‹é™£åˆ— */ 
    int g , h;
-   printf("answer °}¦C\n");
+   printf("answer é™£åˆ—\n");
    for(g=0;g<2;g++)
    {
       for(h=0;h<k;h++)
@@ -232,9 +232,9 @@ void Print()
   int i = 0;
   for(i=0;i<length_c;i++)
   {
-    if(Equation3[0][i] < 0)  //¥ı§PÂ_¥¿­t 
+    if(Equation3[0][i] < 0)  //å…ˆåˆ¤æ–·æ­£è²  
     {
-      if(i==length_c)   //¦pªG¬O­t  §PÂ_¬O§_¬°³Ì«á¤@­Ó±`¼Æ 
+      if(i==length_c)   //å¦‚æœæ˜¯è²   åˆ¤æ–·æ˜¯å¦ç‚ºæœ€å¾Œä¸€å€‹å¸¸æ•¸ 
       {
         printf("%d",Equation3[0][i]);
         fprintf(fp3,"%d",Equation3[0][i]);
@@ -248,7 +248,7 @@ void Print()
   	    }
 		else
 		{
-		  if(Equation3[1][i] == 1)   //¦pªG¬O­t §PÂ_¬O§_¬°Xªº¤@¦¸¤è 
+		  if(Equation3[1][i] == 1)   //å¦‚æœæ˜¯è²  åˆ¤æ–·æ˜¯å¦ç‚ºXçš„ä¸€æ¬¡æ–¹ 
 		  {
 		    printf("%dX", Equation3[0][i]);
 		    fprintf(fp3,"%dX",Equation3[0][i]);
@@ -263,18 +263,18 @@ void Print()
     }
     else
     {
-      if(Equation3[0][i] == 0 && Equation3[1][i] == 0)   //§PÂ_³Ì«áªº°}¦C¤¤¦¸¤è»P«Y¼Æ¬O§_¬°0 
+      if(Equation3[0][i] == 0 && Equation3[1][i] == 0)   //åˆ¤æ–·æœ€å¾Œçš„é™£åˆ—ä¸­æ¬¡æ–¹èˆ‡ä¿‚æ•¸æ˜¯å¦ç‚º0 
       {
       	break;	
       }     
-      if(i==0)  //¦pªG¬O¥¿  §PÂ_¬O§_¬°¦h¶µ¦¡²Ä¤@­Ó¼Æ¦r 
+      if(i==0)  //å¦‚æœæ˜¯æ­£  åˆ¤æ–·æ˜¯å¦ç‚ºå¤šé …å¼ç¬¬ä¸€å€‹æ•¸å­— 
       {
         printf("%dX^%d", Equation3[0][i] , Equation3[1][i]);
         fprintf(fp3,"%dX^%d",Equation3[0][i],Equation3[1][i]);
       }
       else
       {
-        if(Equation3[1][i] == 0)  //¦pªG¬O¥¿  §PÂ_¬O§_¬°³Ì«á¤@­Ó±`¼Æ 
+        if(Equation3[1][i] == 0)  //å¦‚æœæ˜¯æ­£  åˆ¤æ–·æ˜¯å¦ç‚ºæœ€å¾Œä¸€å€‹å¸¸æ•¸ 
         {
        	  printf("+%d",Equation3[0][i]);
           fprintf(fp3,"+%d",Equation3[0][i]);
@@ -283,7 +283,7 @@ void Print()
 		{
  	      if(Equation3[1][i] == 1)
 		  {
-		    printf("+%dX", Equation3[0][i]);  //¦pªG¬O¥¿ §PÂ_¬O§_¬°Xªº¤@¦¸¤è  
+		    printf("+%dX", Equation3[0][i]);  //å¦‚æœæ˜¯æ­£ åˆ¤æ–·æ˜¯å¦ç‚ºXçš„ä¸€æ¬¡æ–¹  
 		   	fprintf(fp3,"+%dX",Equation3[0][i]);
 		  }
 		  else
