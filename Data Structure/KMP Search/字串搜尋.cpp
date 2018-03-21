@@ -7,7 +7,7 @@
 using namespace std;
 
 void File_open(string& , string&);
-void Morris_Pratt(string& , string& );
+void Morris_Pratt(string& , string& ); //è¨ˆç®—å¤±æ•—å‡½æ•¸ åŠ æ‰¾åˆ°å­—ä¸²å‡ºç¾ä½ç½®
 void Print_final();
 void SetColor(int ,int );
 int failure[50];
@@ -34,11 +34,11 @@ void File_open(string& article , string& word)
    int x=0;
    int i=0 , j=0;
    
-   cout << "½Ğ¿é¤JÀÉ¦W: ";
+   cout << "è«‹è¼¸å…¥æª”å: ";
    cin >> filename;
       
    fp = fopen(filename,"r");
-   while(1)   //­pºâ¦r¼Æ 
+   while(1)   //è¨ˆç®—å­—æ•¸ 
    {
       ch = getc(fp);
       if(ch == EOF) break;
@@ -69,7 +69,7 @@ void File_open(string& article , string& word)
    char temp[50] = {0}; 
    cout << "\n" << article;
    
-   cout << "\n\n½Ğ¿é¤J§A­n§äªº¦r¦ê: ";
+   cout << "\n\nè«‹è¼¸å…¥ä½ è¦æ‰¾çš„å­—ä¸²: ";
    cin >> temp;
    
    word.assign(temp);
@@ -80,7 +80,7 @@ void File_open(string& article , string& word)
 void Morris_Pratt(string& article, string& word)
 {
     if (word.size() > article.size()) return;
-    //failure function¡C
+    //failure functionã€‚
     for (int i=1, j=failure[0]=-1; i<word.size(); i++)
     {
         while (j >= 0 && word[j+1] != word[i])
@@ -96,7 +96,7 @@ void Morris_Pratt(string& article, string& word)
 		cout << failure[k];
 	}
     cout << "\n\n";
-    // ¦r¦ê¤Ç°t¡C
+    // å­—ä¸²åŒ¹é…ã€‚
     int find;
     int number=0;
 	for (int n=0, i=0, j=-1; i<article.size(); i++)
@@ -116,7 +116,7 @@ void Morris_Pratt(string& article, string& word)
             j = failure[j];
         }
     } 
-    cout << "¦@¦³ " << number << "µ§  ¸ê®Æ\n\n";
+    cout << "å…±æœ‰ " << number << "ç­†  è³‡æ–™\n\n";
 }
 
 void Print_final()
@@ -148,7 +148,7 @@ void Print_final()
     }
     else
     {
-    	cout << "\n¬dµL¦¹¦r¦ê\n\n";
+    	cout << "\næŸ¥ç„¡æ­¤å­—ä¸²\n\n";
 	}
 }
 
