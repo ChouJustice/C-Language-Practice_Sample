@@ -34,12 +34,12 @@ void read_Matrix()
   int i,j;
   int ch;
 
-  printf("½Ğ¿é¤JÀÉ¦W : ");
+  printf("è«‹è¼¸å…¥æª”å : ");
   gets(filename);
  
   fp = fopen(filename,"r");
 
-  if (fp == NULL) printf("¶}ÅªÀÉ¥¢±Ñ!");
+  if (fp == NULL) printf("é–‹è®€æª”å¤±æ•—!");
   else 
   {   
     while(1)   
@@ -116,7 +116,7 @@ void DFS(int p, int i)
     	    num = 1;
 	    }
 	    
-        cout << i << "¬OÃö¸`ÂI\n";
+        cout << i << "æ˜¯é—œç¯€é»\n";
     }
     
     if(articulation == 1 && num == 0)
