@@ -13,7 +13,7 @@ int size;
 int k=0;
 
 
-class Bigint //¤j¼Æ 
+class Bigint //å¤§æ•¸ 
 {
 	private:
     public:
@@ -22,7 +22,7 @@ class Bigint //¤j¼Æ
             Bigint & operator = (string s1 );
             Bigint & operator = (const int & );
 };
-Bigint::Bigint()  // ªì©l¤Æ 
+Bigint::Bigint()  // åˆå§‹åŒ– 
 {
         for( int i = 0 ; i < SIZE ; i++ )
         {
@@ -41,7 +41,7 @@ Bigint & Bigint::operator = ( const string s1 ) // Bigint = string
         return *this;
 }
 
-Bigint & Bigint::operator = ( const int &a )  // §PÂ_¶i¦ì
+Bigint & Bigint::operator = ( const int &a )  // åˆ¤æ–·é€²ä½
 {
         Num[0] = a;
 
@@ -87,7 +87,7 @@ Bigint operator * ( const Bigint &a , const Bigint &b )  // Bigint * Bigint
             }
         }
 
-        for( int i = 0 ; i < SIZE ; i++ )  // §PÂ_¶i¦ì 
+        for( int i = 0 ; i < SIZE ; i++ )  // åˆ¤æ–·é€²ä½ 
         {
             c.Num[i+1] += c.Num[i] / 10;    
             c.Num[i] %= 10;
@@ -106,7 +106,7 @@ Bigint operator * ( const Bigint &a , const int b ) // Bigint * int
 
         for( int i = 0 ; i < SIZE ; i++ )
         {
-            c.Num[i+1] += c.Num[i] / 10;    // §PÂ_¶i¦ì
+            c.Num[i+1] += c.Num[i] / 10;    // åˆ¤æ–·é€²ä½
             c.Num[i] %= 10;
         }
         return c;
@@ -120,7 +120,7 @@ Bigint operator + ( const Bigint &a , const Bigint &b ) // Bigint + Bigint
         { 
             c.Num[i] = a.Num[i] + b.Num[i];
         } 
-        for( int i = 0 ; i < SIZE ; i++ ) // §PÂ_¶i¦ì
+        for( int i = 0 ; i < SIZE ; i++ ) // åˆ¤æ–·é€²ä½
         {
             c.Num[i+1] += c.Num[i] / 10;    
             c.Num[i] %= 10;
@@ -128,7 +128,7 @@ Bigint operator + ( const Bigint &a , const Bigint &b ) // Bigint + Bigint
         return c;
 }
 
-inline bool operator == ( const Bigint &a , const Bigint &b ) // Bigint == Bigint ®É 
+inline bool operator == ( const Bigint &a , const Bigint &b ) // Bigint == Bigint æ™‚ 
 {
         for( int i = SIZE - 1 ; i >= 0 ; i++ )
         { 
@@ -138,7 +138,7 @@ inline bool operator == ( const Bigint &a , const Bigint &b ) // Bigint == Bigin
         return true;
 }
 
-inline bool operator == ( const Bigint &a , const int &b ) // Bigint == int ®É  
+inline bool operator == ( const Bigint &a , const int &b ) // Bigint == int æ™‚  
 {
         Bigint c;
         c = b;
@@ -163,14 +163,14 @@ int main(void)
 {
 	Bigint a , b , c , ans;
 	
-	cout << "¤j¼Æ A " << endl; a = File_open();
-	cout << "¤j¼Æ B " << endl; b = File_open();
+	cout << "å¤§æ•¸ A " << endl; a = File_open();
+	cout << "å¤§æ•¸ B " << endl; b = File_open();
 	
 	cout << endl << "size = " << size << endl;
 	system("pause");
 	int bug = 0;
 	
-	bug = size;  // ·ísize³Q³Î¦¨ 5 ®É  ·|¦³BUG 
+	bug = size;  // ç•¶sizeè¢«å‰²æˆ 5 æ™‚  æœƒæœ‰BUG 
 	while(1)
 	{
 		bug = bug / 2;
@@ -200,11 +200,11 @@ Bigint File_open()
    	int x=0;
    	int i=0 , j=0;
    
-   	cout << " ½Ğ¿é¤JÀÉ¦W : ";
+   	cout << " è«‹è¼¸å…¥æª”å : ";
    	cin >> filename;
       
    	fp = fopen(filename,"r");
-   	while(1)   //­pºâ¦r¼Æ 
+   	while(1)   //è¨ˆç®—å­—æ•¸ 
    	{
       	ch = getc(fp);
       	if(ch == EOF) break;
@@ -235,7 +235,7 @@ Bigint File_open()
 		  	}
       	}
    	}
-   	// size ¨ú±o 
+   	// size å–å¾— 
    	s[k] = x; k++;
    	
 	int t=0;
