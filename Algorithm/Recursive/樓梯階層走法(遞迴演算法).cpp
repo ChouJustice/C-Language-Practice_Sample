@@ -26,7 +26,7 @@ int main(void)
 
 void printHow()
 {
-    cout << "Path "<< total << " ก๗ " ;
+    cout << "Path "<< total << " ยกรท " ;
     for (int i = 0; i < len; i++) 
 	{
 	    cout << step[i] << " ";
