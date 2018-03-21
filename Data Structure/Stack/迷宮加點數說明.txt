@@ -1,0 +1,4 @@
++ : 50 points
+- : 30 points
+* : 80 points
+$ : 100 points
