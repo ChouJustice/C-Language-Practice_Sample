@@ -77,3 +77,10 @@
     * 實作多項式相加方法
 
     ![Foo](https://github.com/ChouJustice/C-Language_exercise/blob/master/Images/Poly.png)
+    
+## Sort
+
+* Bubble Sort
+* Insertion Sort
+* Merge Sort
+* Selection Sort
