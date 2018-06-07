@@ -59,7 +59,7 @@
     * 實作計算失敗函數 Failure Function
     * 利用失敗函數找到我要的字串
 
-    ![Foo](https://github.com/ChouJustice/C-Language_exercise/blob/master/Images/KMP.png)
+    ![Foo](https://github.com/ChouJustice/C-Language_exercise/blob/master/Images/KMP.PNG)
 
 * Linked List 串列  
 
